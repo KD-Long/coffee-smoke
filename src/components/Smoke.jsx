@@ -3,8 +3,6 @@ import * as THREE from 'three'
 import { shaderMaterial, useTexture } from '@react-three/drei';
 import { extend, useFrame } from '@react-three/fiber';
 
-
-
 import vertexShader from '../shaders/vertexShader.glsl';
 import fragmentShader from '../shaders/fragmentShader.glsl';
 
@@ -17,6 +15,7 @@ const Smoke = () => {
     const perlin = useTexture('/perlin.png')
     perlin.wrapS = THREE.RepeatWrapping
     perlin.wrapT = THREE.RepeatWrapping
+    // sets the texture to keep wrapping the edges
 
 
     const MyShaderMaterial = shaderMaterial({
@@ -46,13 +45,11 @@ const Smoke = () => {
     }, [])
 
     useFrame((state, delta) => {
-        const elapsedTime = state.clock.elapsedTime
 
+        const elapsedTime = state.clock.elapsedTime
         smokeMeshRef.current.material.uniforms.uTime.value += delta
         
-        
-
-        state.camera.lookAt(0, 5, 0);
+        state.camera.lookAt(0, 3, 0);
     })
 
     return (
@@ -60,7 +57,7 @@ const Smoke = () => {
             {/* Note Im scaling the mesh and not geometry here not sure if this wil lcause an issue later */}
             <mesh ref={smokeMeshRef} >
                 <planeGeometry args={[1, 1, 16, 64]} />
-                <myShaderMaterial side={THREE.DoubleSide} transparent />
+                <myShaderMaterial side={THREE.DoubleSide} transparent depthWrite={false} />
             </mesh>
         </>
     )

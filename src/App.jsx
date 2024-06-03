@@ -13,10 +13,10 @@ function App() {
       <Canvas
         shadows={true}
         camera={{
-          fov: 45,
+          fov: 25,
           near: 0.1,
-          far: 200,
-          position: [0, 6, 8]
+          far: 100,
+          position: [10, 12, 14]
         }}
       >
         <Experience />

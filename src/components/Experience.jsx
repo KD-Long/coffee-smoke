@@ -8,14 +8,6 @@ import Smoke from './Smoke.jsx'
 
 const Experience = () => {
 
-    let time =0
-
-    useFrame((state, delta) =>{
-            const elapsedTime = state.clock.elapsedTime
-       
-
-        })
-
     return (
         <>
             <OrbitControls makeDefault />
@@ -25,10 +17,10 @@ const Experience = () => {
 
             {/* Sets lighting env map */}
             {/* We probs dont need this because the model has lights baked and out shaders are probs mesh basic */}
-            <Environment
+            {/* <Environment
                 // background
                 preset="sunset"
-            />
+            /> */}
             <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
                 <GizmoViewport axisColors={['#9d4b4b', '#2f7f4f', '#3b5b9d']} labelColor="white" />
             </GizmoHelper>
@@ -36,11 +28,8 @@ const Experience = () => {
             {/* Coffee MODEL */}
             <BakedModel />
             
-
-
+            {/* Smoke Shader */}
             <Smoke />
-
-
 
         </>
     )
