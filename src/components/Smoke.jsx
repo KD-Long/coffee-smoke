@@ -59,6 +59,7 @@ const Smoke = () => {
                 <planeGeometry args={[1, 1, 16, 64]} />
                 <myShaderMaterial side={THREE.DoubleSide} transparent depthWrite={false} />
             </mesh>
+            
         </>
     )
 }
