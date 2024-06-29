@@ -5,8 +5,6 @@ This project showcases WebGL shaders implemented using React Three Fiber (R3F). 
 
 ![coffee-smoke-image](./public/smoke.jpeg)
 
-
-
 ## Tech
 
 |                   |               |
@@ -15,7 +13,6 @@ This project showcases WebGL shaders implemented using React Three Fiber (R3F). 
 | JS                | Three.js      |
 | HTML              | CSS           |
 | Vite              | shaders       |
-
 
 
 ## How to Use
